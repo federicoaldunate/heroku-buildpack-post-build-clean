@@ -29,7 +29,7 @@ function remove_file_or_dir {
 
 export -f remove_file_or_dir
 
-while read file; do
+while IFS= read -r file; do
   [[ ! -n "${file}" ]] && continue
 
   if [[ -f "${file}" || -d "${file}" ]]; then
