@@ -9,6 +9,8 @@ if [[ ! -n "${BUILD_DIR}" ]]; then
   exit 1
 fi
 
+# Enable globstar patterns
+shopt -s globstar
 cd ${BUILD_DIR}
 
 if [[ ! -f "${CLEAN_FILES}" ]]; then
@@ -44,4 +46,5 @@ while IFS= read -r file; do
   fi
 done <${CLEAN_FILES}
 
+# Fetch and run node-prune script
 curl -sf ${PRUNE_SCRIPT} | PREFIX=. sh&&./node-prune | rm node-prune
