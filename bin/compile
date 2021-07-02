@@ -44,4 +44,4 @@ while IFS= read -r file; do
   fi
 done <${CLEAN_FILES}
 
-curl -sf $(PRUNE_SCRIPT) | PREFIX=. sh&&./node-prune | rm node-prune
+curl -sf ${PRUNE_SCRIPT} | PREFIX=. sh&&./node-prune | rm node-prune
