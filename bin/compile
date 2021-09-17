@@ -47,4 +47,4 @@ while IFS= read -r file; do
 done <${CLEAN_FILES}
 
 # Runs yarn autoclean
-yarn autoclean --F
+yarn autoclean --force
